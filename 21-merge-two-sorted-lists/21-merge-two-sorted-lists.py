@@ -9,6 +9,9 @@ class Solution(object):
         if not list1 or not list2:
             return list1 or list2
         
+        # You can imagine this solution like holding a sewing pin
+        # and sewing together all nodes in a sorted fasion
+        
         first = list1
         second = list2
         root = ListNode(1)

@@ -1,4 +1,4 @@
-# An effort to solve 169 Data Structure and Algorithm problems 
+# An effort to solve 169 Algorithm problems 
 List i'm following : https://www.techinterviewhandbook.org/grind75
 
 Schedule : 

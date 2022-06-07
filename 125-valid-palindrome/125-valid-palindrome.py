@@ -23,6 +23,5 @@ class Solution(object):
     
     def isPalindrome(self, s):
         s = self.sanitizeString(s)
-        print(s)
         return self.isPalindromeHelper(s)
         

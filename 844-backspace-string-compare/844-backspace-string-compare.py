@@ -26,12 +26,6 @@ class Solution(object):
         t = self.removeBackspace(t[::-1])
         return s == t
         
-        
-                
-                
-        # print(newS[::-1])
-        
-        
                 
             
         

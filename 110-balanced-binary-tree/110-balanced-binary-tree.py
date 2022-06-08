@@ -4,22 +4,29 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+class Helper(object):
+    def __init__(self,difference,height):
+        self.difference = difference
+        self.height = height
+        
 class Solution(object):
     def isBalancedHelper(self,root):
         
         if root is None:
-            return [True,0]
+            return Helper(True,0)
             
-        leftDiff , left = self.isBalancedHelper(root.left)
-        rightDiff , right = self.isBalancedHelper(root.right)
+        leftHelper = self.isBalancedHelper(root.left)
+        rightHelper = self.isBalancedHelper(root.right)
         
-        diff = abs(left - right)
+        diff = abs(leftHelper.height - rightHelper.height)
         
-        return [diff <= 1 and leftDiff and rightDiff, max(left,right) + 1]
+        return Helper(diff <= 1 and leftHelper.difference and rightHelper.difference,max(leftHelper.height,rightHelper.height) + 1)
+        # return [, ]
     
     def isBalanced(self, root):
         
-        return self.isBalancedHelper(root)[0]
+        return self.isBalancedHelper(root).difference
         
         
         

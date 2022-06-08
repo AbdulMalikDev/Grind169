@@ -1,6 +1,9 @@
 class Solution(object):
     def majorityElement(self, nums):
         
+        # Boyer-Moore Voting Algorithm
+        # One of my favorites!
+        
         runningCount = 1
         maxNum = nums[0]
         

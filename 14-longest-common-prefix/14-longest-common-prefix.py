@@ -13,11 +13,12 @@ class Solution(object):
         # O(N * M) Time where N is length of longest string and M is no.of Strings
         for i in range(maxLen):
             for j in range(len(strs)):
+                currString = strs[j]
                 
-                if i < len(strs[j]) and seen[i] == 0:
+                if i < len(currString) and seen[i] == 0:
                     prevChar = strs[j][i]
                     
-                if i<len(strs[j]) and strs[j][i] == prevChar:
+                if i<len(currString) and currString[i] == prevChar:
                     seen[i] += 1
                     
             # i+1 because string splicing in python is exclusive not inclusive

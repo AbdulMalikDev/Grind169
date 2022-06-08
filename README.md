@@ -4,7 +4,7 @@ List i'm following : https://www.techinterviewhandbook.org/grind75
 ## Completion
 <img src="https://progress-bar.dev/17" alt="drawing" width="200"/>
 
-Schedule : 
+## Schedule : 
 ```
 Jun 6 -12    | Week 1 - 33 Problems
 

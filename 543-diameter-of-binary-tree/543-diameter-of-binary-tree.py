@@ -17,7 +17,10 @@ class Solution(object):
             maxDia = max(maxValL,maxValR,left+right+1)
             return [max(left,right)+1,maxDia]
         
-        return height(root)[1] - 1
+        numberOfNodesInDiameter = height(root)[1]
+        
+        # Note: We need to subtract '1' because it is asking length of path
+        return numberOfNodesInDiameter - 1
         
         
         

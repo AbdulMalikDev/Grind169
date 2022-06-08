@@ -16,7 +16,7 @@ class Solution(object):
                 currString = strs[j]
                 
                 if i < len(currString) and seen[i] == 0:
-                    prevChar = strs[j][i]
+                    prevChar = currString[i]
                     
                 if i<len(currString) and currString[i] == prevChar:
                     seen[i] += 1

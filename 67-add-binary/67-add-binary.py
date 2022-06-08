@@ -1,6 +1,8 @@
 class Solution(object):
     def addBinary(self, a, b):
         
+        # Neetcode video is good on this
+        
         a = a[::-1]
         b = b[::-1]
         carry = 0

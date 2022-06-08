@@ -1,6 +1,7 @@
 class Solution(object):
     def longestPalindrome(self, s):
         
+        # O(N) Time  | O(N) Space
         freq = defaultdict(int)
         for char in s:
             freq[char] += 1

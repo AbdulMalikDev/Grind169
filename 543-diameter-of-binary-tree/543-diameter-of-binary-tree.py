@@ -17,7 +17,6 @@ class Solution(object):
             maxDia = max(maxValL,maxValR,left+right+1)
             return [max(left,right)+1,maxDia]
         
-        print(height(root))
         return height(root)[1] - 1
         
         

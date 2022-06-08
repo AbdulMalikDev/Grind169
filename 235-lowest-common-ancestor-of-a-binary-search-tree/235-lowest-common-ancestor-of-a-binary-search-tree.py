@@ -7,10 +7,17 @@
 
 class Solution(object):
     def lowestCommonAncestor(self, root, a, b):
+        # If root itself is the LCA
         if root==a or root==b:
             return a if root==a else b
+        
+        # Since not given in question properly
+        # I am ensuring that p is always the smaller value
+        # and q is always the bigger one since we are using the
+        # BST sorted property this matters to us
         p = a if a.val <= b.val else b
         q = b if p==a else a
+        
         # Notice how you are given a Binary Search Tree
         # not just a Binary Tree
         # How can we use the properies of a BST for this problem?
@@ -19,11 +26,6 @@ class Solution(object):
         # along with handling some edge cases this is pretty much the solution
         
         while root:
-            print(root.val)
-            print(p.val)
-            print(q.val)
-            print(p.val <= root.val <= q.val)
-            print('')
             if p.val <= root.val <= q.val:
                 return root
             

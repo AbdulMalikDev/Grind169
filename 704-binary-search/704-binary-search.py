@@ -1,8 +1,7 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
-        # if nums[0] == target:
-        #     return 0
+        # Following the Binary Search template
         
         left = 0
         right = len(nums)

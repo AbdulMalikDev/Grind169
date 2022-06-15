@@ -6,9 +6,6 @@ class Solution:
         
         reversedNumber = 0
         while reversedNumber < x:
-            # print(reversedNumber)
-            # print(x)
-            # print("")
             # add last digit of x to reversed number
             reversedNumber = reversedNumber * 10 + (x % 10)
             # Getting rid of last digit of x
@@ -16,3 +13,5 @@ class Solution:
         
         return (x == reversedNumber or (x == (reversedNumber // 10))) 
         
+        # Note : Python double slash division needs to be used since we need integer
+        # division

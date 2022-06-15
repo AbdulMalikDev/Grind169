@@ -19,5 +19,8 @@ class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         return self.buildTree(nums)
         
+        # Note: Classic recursion problem, 
+        # do the needful hand the rest over
+        # to the recursion stack magic
         
         

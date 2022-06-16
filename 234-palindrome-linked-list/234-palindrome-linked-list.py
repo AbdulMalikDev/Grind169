@@ -4,19 +4,17 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        
-        def checkPalindrome(node,head):
+    
+    def checkPalindrome(self,node,head):
             if node == None:
                 return [True,head]
         
-            result,head = checkPalindrome(node.next,head)
+            result,head = self.checkPalindrome(node.next,head)
             
             if not result or node.val != head.val:
                 return [False,None]
-            # if head.next == node:
-            #     return True
+            
             return [True,head.next]
-    
-        print(checkPalindrome(head,head))
-        return checkPalindrome(head,head)[0]
+        
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        return self.checkPalindrome(head,head)[0]

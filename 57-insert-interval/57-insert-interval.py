@@ -15,13 +15,16 @@ class Solution:
             currStart = intervals[i][0]
             currEnd = intervals[i][1]
             
+            # Overlapping condition
             if currEnd > prevEnd and prevStart <= currStart <= prevEnd:
                 flat[-1][1] = currEnd
                 continue
-                
+            
+            # if the new interval is completely inside no need of interacting with it
             elif currStart >= prevStart and currEnd <= prevEnd:
                 continue
-                
+            
+            # if the interval is not overlapping no need
             flat.append([currStart,currEnd])
             
         return flat

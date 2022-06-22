@@ -9,6 +9,7 @@ class Solution:
             if endChar not in lastSeen:
                 lastSeen[endChar] = windowEnd
             else:
+                # Important point here ⬇️
                 if windowStart < lastSeen[endChar] + 1: 
                     windowStart = lastSeen[endChar] + 1
                 lastSeen[endChar] = windowEnd

@@ -17,6 +17,7 @@ class Solution:
                     allZeroes.append((r,c))
                 else:
                     # Unprocessed
+                    # Changing value in-place to avoid extra space
                     mat[r][c] = -1
                     
         queue = deque(allZeroes)

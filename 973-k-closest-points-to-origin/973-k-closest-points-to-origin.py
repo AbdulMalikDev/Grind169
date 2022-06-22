@@ -4,7 +4,7 @@ class Solution:
         result = []
         heap = []
         for x,y in points:
-            heapq.heappush(heap,(sqrt(x**2+y**2),(x,y)))
+            heapq.heappush(heap,(x**2+y**2,(x,y)))
             
         for _ in range(k):
             distance,coords = heapq.heappop(heap)

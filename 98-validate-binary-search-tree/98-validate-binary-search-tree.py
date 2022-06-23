@@ -7,6 +7,8 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
+        # Inorder list of every valid BST is a sorted list
+        
         inorderList = []
         def inorder(node):
             if node is None:
@@ -16,7 +18,7 @@ class Solution:
             inorder(node.right)
         inorder(root)
         for i in range(len(inorderList)-1):
-            if inorderList[i] > inorderList[i+1] or inorderList[i] == inorderList[i+1]:
+            if inorderList[i] >= inorderList[i+1]:
                 return False
         return True
         

@@ -7,36 +7,35 @@ class Node:
 """
 
 class Solution:
+    def localdfs(self,node):
+        if node not in self.visited:
+            self.visited.add(node)
+            print(node.val)
+            print(node.neighbors)
+            print("")
+            for child in node.neighbors:
+                self.localdfs(child)
     def cloneGraph(self, node: 'Node') -> 'Node':
-        
-        if not node: return node
-        
-        
-        # DFS failed, let's try BFS
-        # Why am i trying BFS? what is the trafeoff?
-        # because BFS is iterative and controlled traversal
-        
+        self.visited = set()
+        if not node:
+            return node
         graph = defaultdict(Node)
-        graph[node.val] = Node(node.val)
-        queue = deque([node])
+        graph[node] = Node(node.val)
         
-        while queue:
-            currNode = queue.popleft()
-            # ⭐️ picking up nodes from a hashmap
-            # inside BFS was new for me
-            clone = graph[currNode.val]
+        def dfs(node,graph):
             
-            for child in currNode.neighbors:
+            for child in node.neighbors:
+                if child not in graph:
+                    graph[child] = Node(child.val)
+                    graph[node].neighbors.append(graph[child])
+                    # print(graph[node].neighbors)
+                    dfs(child,graph)
+                else:
+                    graph[node].neighbors.append(graph[child])
+        
+        dfs(node,graph)
+        # self.localdfs(graph[node])
+        return graph[node]
                 
-                if child.val not in graph:
-                    graph[child.val] = Node(child.val)
-                    # ⭐️This is brilliant. Only append nodes
-                    # if not in graph otherwise simply add to child
-                    queue.append(child)
-                    
-                clone.neighbors.append(graph[child.val])
-                
-                
-        return graph[node.val]
                 
         

@@ -33,7 +33,6 @@ class Solution:
                 if Indegree[dependency] == 0:
                     queue.append(dependency)
                     
-        print(topSort) 
-        return len(topSort)==len(nodes) and numCourses >= len(topSort)
+        return len(topSort)==len(nodes)
                 
         

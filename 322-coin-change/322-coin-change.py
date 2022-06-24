@@ -16,6 +16,9 @@ class Solution:
             for coin in coins:
                 if coin <= changeSum:
                     result = min(result,1+change(changeSum-coin))
+                    
+            # ⭐️ Memoization. Remembering the optimized amount 
+            # and no.of coins needed for it.
             memo[changeSum] = result
             return result
         

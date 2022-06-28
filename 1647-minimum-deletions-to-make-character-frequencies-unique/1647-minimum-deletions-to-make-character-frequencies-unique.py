@@ -7,15 +7,15 @@ class Solution:
         running = 0
         freq = defaultdict(int)
         
+        # O(N) Time
         for char in s:
             freq[char] += 1
-
+        
+        # O(N) Time
         for char,frequency in freq.items():
             nums[frequency] += 1
-            
-        while nums and nums[-1] == 0:
-            nums.pop()
-            
+        
+        # O(N) Time
         pointer = len(nums) - 1
         while pointer > 0:
             num = nums[pointer]

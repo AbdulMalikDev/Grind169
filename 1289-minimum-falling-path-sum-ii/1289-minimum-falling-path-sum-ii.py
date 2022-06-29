@@ -5,11 +5,7 @@ class Solution:
         cols = len(matrix[0])
         memo = defaultdict(int)
         valueToRow = defaultdict(set)
-        # for r in range(rows):
-        #     for c in range(cols):
-        #         value = matrix[r][c]
-        #         valueToRow[value].add(r)
-        # print(valueToRow)
+        
         # memoization
         def minPath(r,c):
             
@@ -28,7 +24,6 @@ class Solution:
             if r in valueToRow[matrix[r][c]]:
                 for j in range(cols):
                     if (r,j) in memo and matrix[r][j]==matrix[r][c]:
-                        # print("***********")
                         memo[(r,c)] = min(memo[(r,j)],minPath(r+1,j)+matrix[r][c])
                         break
             else:

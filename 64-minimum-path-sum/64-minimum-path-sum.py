@@ -21,9 +21,6 @@ class Solution:
                 # 'grid[r-1][c-1]' because dp is 1-indexed
                 dp[r][c] = min(dp[r-1][c],dp[r][c-1]) + grid[r-1][c-1]
                 
-        # for row in dp:
-        #     print(row)
-            
         return dp[rows][cols]
         
         

@@ -9,8 +9,8 @@ class Solution:
             
             if changeSum == 0:
                 return 0
-            elif changeSum < 0:
-                return sys.maxsize
+            # elif changeSum < 0:
+            #     return sys.maxsize
             
             result = sys.maxsize
             for coin in coins:

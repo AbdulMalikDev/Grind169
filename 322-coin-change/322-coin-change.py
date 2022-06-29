@@ -10,6 +10,8 @@ class Solution:
             if changeSum == 0:
                 return 0
             
+            # Also acts as default value if 
+            # no coin possible to add from here
             result = sys.maxsize
             for coin in coins:
                 if coin <= changeSum:

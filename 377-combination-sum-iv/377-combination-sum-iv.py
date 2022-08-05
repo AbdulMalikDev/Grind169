@@ -2,22 +2,16 @@ class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
         
         n = len(nums)
-        memo = defaultdict(int)
-        def combinations(sum):
-            
-            if sum in memo:
-                return memo[sum]
-            
-            if sum == 0:
-                return 1
-            
-            result = 0
-            for index in range(n):
-                # choose number
-                if nums[index] <= sum:
-                    result += combinations(sum-nums[index])
-                
-            memo[sum] = result
-            return memo[sum]
+        dp = [0 for _ in range(target+1)]
         
-        return combinations(target)
+        dp[0] = 1
+        
+        for i in range(1,target+1):
+            for num in nums:
+                if num <= i:
+                    dp[i] += dp[i-num]
+        
+        print(dp)
+        return dp[-1]
+        
+        

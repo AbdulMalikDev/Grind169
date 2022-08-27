@@ -38,9 +38,6 @@ class Solution:
     def boundaryOfBinaryTree(self, root: Optional[TreeNode]) -> List[int]:
         self.boundary = [] if root.left is None and root.right is None else [root.val]
         self.boundary += self.getLeftBoundary(root.left)
-        print(self.boundary)
         self.boundary += self.getLeafNodes(root)
-        print(self.boundary)
         self.boundary += self.getRightBoundary(root.right)
-        print(self.boundary)
         return self.boundary

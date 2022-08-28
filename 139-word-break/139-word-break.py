@@ -7,15 +7,13 @@ class Solution:
         def areWordsContained(i,j):
             if (i,j) in memo:
                 return memo[(i,j)]
+            
             if s[i:j] in words:
                 memo[(i,j)] = True
                 return True
             
             result = False
             for k in range(i+1,j):
-                # print(i)
-                # print(k)
-                # print(j)
                 result = result or (areWordsContained(i,k) and areWordsContained(k,j))
                 
             memo[(i,j)] = result

@@ -16,7 +16,7 @@ class Solution:
             stack.append(i)
             
         for i in range(len(arr)):
-            result[i] = (result[previousLess[i]]) + (i - previousLess[i]) * arr[i]
+            result[i] = result[previousLess[i]] + (i - previousLess[i]) * arr[i]
             
         return sum(result)  % (10**9+7)
                     

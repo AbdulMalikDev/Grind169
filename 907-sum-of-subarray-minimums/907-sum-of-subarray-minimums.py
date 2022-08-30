@@ -1,7 +1,7 @@
 class Solution:
     def sumSubarrayMins(self, arr: List[int]) -> int:
         
-        result = [0] * (len(arr)+1)
+        result = [0] * (len(arr))
         previousLess = [-1] * len(arr)
         
         stack = []

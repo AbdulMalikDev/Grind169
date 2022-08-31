@@ -22,6 +22,7 @@ class Solution:
                     for char in s:
                         if char not in [a,b]:
                             continue
+                        # reset subarray
                         if rollingCount<0 and aCount>0 and bCount>0:
                             has_a,has_b = False,False
                             rollingCount = 0

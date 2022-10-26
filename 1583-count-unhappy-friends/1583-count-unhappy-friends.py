@@ -11,8 +11,6 @@ class Solution:
         for a,b in prs:
             pairs[a] = b
             pairs[b] = a
-        print(preferences)
-        print(pairs)
         
         for key,value in preferences.items():
             
@@ -21,12 +19,8 @@ class Solution:
                     break
                 indexOfKey = preferences[char].index(key)#1
                 indexOfPair = preferences[char].index(pairs[char])#2
-                print(indexOfKey)
-                print(indexOfPair)
                 if indexOfPair > indexOfKey:
-                    print(char)
-                    print(key)
                     result += 1
                     break
-                print("")
+                    
         return result

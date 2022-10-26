@@ -6,8 +6,10 @@ class Solution:
         
         preferences = defaultdict(list)
         pairs = defaultdict(int)
+        
         for index,value in enumerate(pref):
             preferences[index] = value
+            
         for a,b in prs:
             pairs[a] = b
             pairs[b] = a
@@ -17,8 +19,10 @@ class Solution:
             for char in value:
                 if pairs[key] == char:
                     break
-                indexOfKey = preferences[char].index(key)#1
-                indexOfPair = preferences[char].index(pairs[char])#2
+                    
+                indexOfKey = preferences[char].index(key)
+                indexOfPair = preferences[char].index(pairs[char])
+                
                 if indexOfPair > indexOfKey:
                     result += 1
                     break
